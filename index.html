@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
- <link rel="icon" type="image/png" href="logo.png">
+<head> 
+  <link rel="icon" type="image/x-icon" href="logo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ThuyyAnn Shop — Nơi Bán Đồ ONL</title>
+  <title>HuyHoàng Shop — Nơi Bán Đồ ONL</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <style>
     /* ==== Tối ưu layout, thu hẹp khoảng trống ==== */
@@ -20,7 +20,6 @@ body {
   margin: 0 auto;
   padding-inline: 20px;
 }
-
 .top-banner {
   background: lab(87.78% -85.69 80.69);
   color: white;
@@ -70,25 +69,38 @@ body {
   </style>
  </head>
 <body class="p-6 md:p-10">
-  <!-- Header -->
-  <header class="wrap mb-8">
-    <div class="header">
-      <div class="header-left">
-  <a href="kiem_tien_website.html" class="shop-link">
-    <img src="logo.png" alt="Logo" class="logo">
-    <div class="shop-info">
-      <h1>ThuyyAnn Shop</h1>
-      <p>Mua sắm tiện lợi Shopee / TikTok Shop</p>
+<!-- Header -->
+<header class="wrap mb-8">
+  <div class="header">
+    <!-- Bên trái: Logo + Tên Shop -->
+    <div class="header-left">
+      <a href="index.html" class="shop-link">
+        <img src="logo.png" alt="HuyHoang Logo" class="logo">
+        <div class="shop-info">
+          <h1>HuyHoàng Shop</h1>
+          <p>Mua sắm tiện lợi Shopee / TikTok Shop</p>
+        </div>
+      </a>
     </div>
-  </a>
-</div>
 
-      <div class="header-right">
-        <button id="back-app" class="back-btn" title="Quay lại trang trước">← Quay lại</button>
-        <button id="open-cart" class="cart-btn" title="Xem giỏ hàng">🛒 <span id="cart-count" class="badge">0</span></button>
-      </div>
+    <!-- Bên phải: Quay lại + Giỏ hàng -->
+    <div class="header-right">
+      <button id="back-app" class="back-btn" title="Quay lại trang trước">← Quay lại</button>
+      <button id="open-cart" class="cart-btn" title="Xem giỏ hàng">
+        🛒 <span id="cart-count" class="badge">0</span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
+
+<!-- Script xử lý -->
+<script>
+  // Nút "Quay lại"
+  document.getElementById("back-app").addEventListener("click", () => {
+    window.history.back();
+  });
+</script>
+
   <!-- Main -->
   <main class="wrap">
     <div class="glass rounded-2xl p-5 md:p-6 mb-4 flex items-center justify-between">
@@ -458,7 +470,7 @@ body {
     <div>
       <div class="flex items-center mb-3">
        <img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full mr-2">
-        <h2 class="text-xl font-bold text-white">ThuyyAnn Shop</h2>
+        <h2 class="text-xl font-bold text-white">HuyHoang Shop</h2>
       </div>
       <p class="text-sm text-gray-200">
         Mua sắm tiện lợi, giá rẻ và nhanh chóng như Shopee / TikTok Shop.  
@@ -601,7 +613,7 @@ body {
   background: #0084FF; /* màu Messenger */
 }
 .messenger-btn:hover {
-  background: #006cd6;
+  background: #88ff00;
 }
 
     }
