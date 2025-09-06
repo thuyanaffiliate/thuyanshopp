@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head> 
-  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="icon" type="image/x-icon" href="logo.ico">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>HuyHoàng Shop — Nơi Bán Đồ ONL</title>
@@ -11,7 +11,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #ff05b4, hwb(193 0% 0%));
+  background: #f7fbff;
   font-family: Arial, sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
   padding-inline: 20px;
 }
 .top-banner {
-  background: lab(87.78% -85.69 80.69);
+  background: #1d4ed8;
   color: white;
   text-align: center;
   padding: 12px;
@@ -34,12 +34,12 @@ body {
 @keyframes blink {
   50% { opacity: 0.6; }
 }
-    :root{--grad:linear-gradient(135deg,#6a11cb,#2575fc)}
+    :root{--grad:linear-gradient(135deg,#e6f0ff,#b3d4ff);--primary:#1d4ed8;--primary-600:#1e40af;--accent:#0ea5e9;}
     body{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:var(--grad);min-height:100vh}
     .wrap{max-width:1100px;margin:0 auto}
-    .glass{background:rgba(255,255,255,.92);backdrop-filter:saturate(160%) blur(6px)}
-    .card{background:#fff;border-radius:1rem;box-shadow:0 12px 30px rgba(225, 38, 38, 0.12);transition:.25s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.18)}
+    .glass{background:rgba(255,255,255,.95);backdrop-filter:saturate(160%) blur(8px); border:1px solid rgba(30,64,175,.08); box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    .card{background:#fff;border-radius:1.25rem;box-shadow:0 10px 24px rgba(2,6,23,.06);transition:.25s; border:1px solid rgba(30,64,175,.08); overflow:hidden}
+    .card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(2,6,23,.12)}
     .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:.8rem;font-weight:700;transition:.2s}
     .btn:active{transform:translateY(1px)}
    .truncate-2 {
@@ -57,17 +57,50 @@ body {
     .pill{background:rgba(0,0,0,.06);padding:.25rem .5rem;border-radius:999px;font-size:.75rem}
 
     /* Header */
-    .header{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#f76fbe,#3297e4);padding:14px 18px;border-radius:16px;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .header{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,#1d4ed8,#38bdf8);padding:14px 18px;border-radius:16px;color:#fff;box-shadow:0 10px 30px rgba(2,6,23,.18)}
     .header-left{display:flex;align-items:center;gap:12px}
     .header .logo{width:56px;height:56px;object-fit:contain;border-radius:10px;background:#fff;padding:6px}
     .shop-info h1{font-size:22px;line-height:1.15;margin:0;font-weight:900}
     .shop-info p{margin:2px 0 0 0;font-size:13px;opacity:.9}
     .header-right{display:flex;gap:10px;align-items:center}
-    .back-btn{padding:8px 14px;border:none;border-radius:10px;background:#ffffff;color:#000000;font-weight:800;cursor:pointer}
-    .cart-btn{position:relative;padding:8px 14px;border:none;border-radius:10px;background:#ff0000;color:#fff;font-weight:800;cursor:pointer}
+    .back-btn{padding:8px 14px;border:none;border-radius:10px;background:#ffffff;color:#0f172a;font-weight:800;cursor:pointer}
+    .cart-btn{position:relative;padding:8px 14px;border:none;border-radius:10px;background:#1d4ed8;color:#fff;font-weight:800;cursor:pointer}
     .cart-btn .badge{position:absolute;top:-6px;right:-6px;background:#ffd000;color:#000;font-weight:900;padding:2px 6px;border-radius:999px;font-size:12px;min-width:20px;text-align:center}
+  
+  /* Product media hover */
+  .media-wrap{position:relative; overflow:hidden}
+  .media-wrap img{transition: transform .35s ease}
+  .card:hover .media-wrap img{transform: scale(1.06)}
+  /* Small badges */
+  .badge-blue{background:rgba(29,78,216,.1); color:#1d4ed8; padding:.15rem .5rem; border-radius:999px; font-size:.72rem; font-weight:700}
+  /* Toast */
+  #toast-area{position:fixed; right:16px; bottom:16px; z-index:99999; display:flex; flex-direction:column; gap:10px}
+  .toast{background:#0ea5e9; color:#fff; border-radius:12px; padding:10px 14px; box-shadow:0 10px 22px rgba(2,6,23,.2); animation:toastIn .25s ease}
+  @keyframes  toastIn{from{transform:translateY(10px); opacity:0} to{transform:translateY(0); opacity:1}}
+
   </style>
- </head>
+ 
+  <style>
+    /* Logo chỉnh sửa */
+    .header .logo{
+      width:80px;height:80px;
+      object-fit:cover;
+      border-radius:50%;
+      background:#fff;
+      padding:4px;
+      box-shadow:0 0 6px rgba(0,0,0,0.2);
+    }
+    footer .logo{
+      width:72px;height:72px;
+      object-fit:cover;
+      border-radius:50%;
+      background:#fff;
+      padding:4px;
+      box-shadow:0 0 8px rgba(0,0,0,0.25);
+    }
+  </style>
+
+</head>
 <body class="p-6 md:p-10">
 <!-- Header -->
 <header class="wrap mb-8">
@@ -75,7 +108,7 @@ body {
     <!-- Bên trái: Logo + Tên Shop -->
     <div class="header-left">
       <a href="index.html" class="shop-link">
-        <img src="logo.png" alt="HuyHoang Logo" class="logo">
+        <img src="logo.ico" alt="HuyHoang Logo" class="logo">
         <div class="shop-info">
           <h1>HuyHoàng Shop</h1>
           <p>Mua sắm tiện lợi Shopee / TikTok Shop</p>
@@ -107,6 +140,21 @@ body {
       <h2 id="page-title" class="text-xl md:text-2xl font-extrabold text-gray-800">Danh mục chính</h2>
       <div id="breadcrumb" class="text-gray-700 text-sm hidden"></div>
     </div>
+    
+    <div id="toolbar" class="glass rounded-2xl p-4 mb-5 flex flex-col md:flex-row md:items-center gap-3">
+      <div class="flex-1 flex gap-3">
+        <input id="search-input" type="text" placeholder="Tìm sản phẩm..." class="flex-1 px-4 py-2 rounded-xl border border-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-300" />
+        <select id="sort-select" class="px-3 py-2 rounded-xl border border-blue-100">
+          <option value="popular">Phổ biến</option>
+          <option value="price-asc">Giá tăng dần</option>
+          <option value="price-desc">Giá giảm dần</option>
+          <option value="rating">Đánh giá cao</option>
+          <option value="sold">Bán chạy</option>
+        </select>
+      </div>
+      <div class="text-sm text-gray-600"><span id="result-count">0</span> sản phẩm</div>
+    </div>
+
     <div id="grid" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
   </main>
   
@@ -125,7 +173,7 @@ body {
         <div class="flex items-center justify-between">
           <span class="font-semibold">Tạm tính:</span><span id="cart-subtotal" class="font-extrabold text-red-600">₫0</span>
         </div>
-        <a id="checkout" href="https://shopee.vn" target="_blank" class="btn bg-red-500 hover:bg-red-600 text-white w-full py-3">⚡Mua Ngay </a>
+        <a id="checkout" href="#" class="btn bg-red-500 hover:bg-red-600 text-white w-full py-3">⚡ Mua Tất Cả </a>
       </div>
     </div>
   </div>
@@ -149,7 +197,19 @@ body {
   .brand-pill:hover{ transform:translateY(-2px); }
   .brand-pill svg{ height:var(--logo-size); width:auto; display:block; }
   .brand-pill span{ color:#fff; font-weight:700; font-size:14px; }
-</style>
+
+  /* Product media hover */
+  .media-wrap{position:relative; overflow:hidden}
+  .media-wrap img{transition: transform .35s ease}
+  .card:hover .media-wrap img{transform: scale(1.06)}
+  /* Small badges */
+  .badge-blue{background:rgba(29,78,216,.1); color:#1d4ed8; padding:.15rem .5rem; border-radius:999px; font-size:.72rem; font-weight:700}
+  /* Toast */
+  #toast-area{position:fixed; right:16px; bottom:16px; z-index:99999; display:flex; flex-direction:column; gap:10px}
+  .toast{background:#0ea5e9; color:#fff; border-radius:12px; padding:10px 14px; box-shadow:0 10px 22px rgba(2,6,23,.2); animation:toastIn .25s ease}
+  @keyframes toastIn{from{transform:translateY(10px); opacity:0} to{transform:translateY(0); opacity:1}}
+
+  </style>
 <div class="brand-banner">
   <!-- TikTok -->
   <a class="brand-pill" href="https://www.tiktok.com/@thuyyanncuti03" target="_blank" rel="noopener">
@@ -180,8 +240,27 @@ body {
 </div>
   <script>
     /* ===== Helpers ===== */
+    /* ===== Helpers Plus ===== */
+    const formatCompact = (n)=>{
+      if (n >= 1_000_000) return (n/1_000_000).toFixed(1).replace(/\.0$/,"") + "m";
+      if (n >= 1_000) return (n/1_000).toFixed(1).replace(/\.0$/,"") + "k";
+      return n.toString();
+    };
+    const bySort = (key)=> (a,b)=>{
+      switch(key){
+        case "price-asc": return a.price - b.price;
+        case "price-desc": return b.price - a.price;
+        case "rating": return (b.rating??0) - (a.rating??0);
+        case "sold": return (b.sold??0) - (a.sold??0);
+        default: return (b.sold??0) - (a.sold??0); // phổ biến
+      }
+    };
+
     const qs=(s,r=document)=>r.querySelector(s), qsa=(s,r=document)=>[...r.querySelectorAll(s)];
     const grid=qs('#grid'), title=qs('#page-title'), breadcrumb=qs('#breadcrumb');
+    const searchInput=()=>qs('#search-input');
+    const sortSelect=()=>qs('#sort-select');
+    const resultCount=()=>qs('#result-count');
     const drawer=qs('#drawer'), backdrop=qs('#backdrop');
     const cartCount=qs('#cart-count'), cartItems=qs('#cart-items'), cartQty=qs('#cart-total-qty'), cartSubtotal=qs('#cart-subtotal');
     const fmtVND = n => n.toLocaleString('vi-VN',{style:'currency',currency:'VND'}).replace(',00','');
@@ -220,147 +299,147 @@ body {
     };
     const products={
       "Thời Trang Nam":[
-        {name:"Áo Sơ Mi Ngắn Tay Đi Biển Hoạ Tiết Đan Lưới Nam ZUTEE",price:130000,description:"Form slim công sở",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m9csqx5t5ocic3.webp",link:"https://s.shopee.vn/3qCzMiFMeu"},
-        {name:"Áo Sweater Phối Sơ Mi Kẻ Liền Thân ZONEF Chất Nỉ 2 Da Nam Nữ Phong Cách Trẻ Thanh Lịch",price:119000,description:"Denim bền màu",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m58uoyk1kbnn20.webp",link:"https://s.shopee.vn/BJiCYeHrC"},
-        {name:"Set Hoodie Zip Form Boxy Nỉ Hàn Cao Cấp Khóa 2 Chiều",price:157000,description:"Lưng cao dễ phối",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzk15krt5l0h2d.webp",link:"https://s.shopee.vn/40WRIsnoWh"},
-        {name:"Áo Sơ Mi Denim Nam,Form Oversize Dễ Phối Đồ",price:209000,description:"Cơ bản, Hàn Quốc, Retro, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md5r9njqozotd1.webp",link:"https://s.shopee.vn/60HVguFiLx"},
-        {name:"Áo Sơ Mi Cộc Tay Nam Nữ Kẻ Sọc Nhẹ, Designed By Nice Clothes",price:119000,description:"Thể thao, Cơ bản, Hàn Quốc, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwqh4o6s2w2h1d.webp",link:"https://s.shopee.vn/9pUEGapIJl"},
-        {name:"[TOSUN] Áo Polo Dài Tay TOSUN Chất Liệu Nỉ 2 Da Form Rộng Hàn Quốc S40",price:200000,description:"Hàn Quốc, Retro, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mdbdwu92becc90.webp",link:"https://s.shopee.vn/5fegYpCdxF"}],
+        {name:"Áo Sơ Mi Ngắn Tay Đi Biển Hoạ Tiết Đan Lưới Nam ZUTEE",price:130000,description:"Form slim công sở",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m9csqx5t5ocic3.webp",link:"https://s.shopee.vn/3qCzMiFMeu",rating:4.7,reviews:1063,sold:12405},
+        {name:"Áo Sweater Phối Sơ Mi Kẻ Liền Thân ZONEF Chất Nỉ 2 Da Nam Nữ Phong Cách Trẻ Thanh Lịch",price:119000,description:"Denim bền màu",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-m58uoyk1kbnn20.webp",link:"https://s.shopee.vn/BJiCYeHrC",rating:4.6,reviews:4414,sold:21160},
+        {name:"Set Hoodie Zip Form Boxy Nỉ Hàn Cao Cấp Khóa 2 Chiều",price:157000,description:"Lưng cao dễ phối",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lzk15krt5l0h2d.webp",link:"https://s.shopee.vn/40WRIsnoWh",rating:4.5,reviews:824,sold:17810},
+        {name:"Áo Sơ Mi Denim Nam,Form Oversize Dễ Phối Đồ",price:209000,description:"Cơ bản, Hàn Quốc, Retro, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-md5r9njqozotd1.webp",link:"https://s.shopee.vn/60HVguFiLx",rating:4.3,reviews:2969,sold:34566},
+        {name:"Áo Sơ Mi Cộc Tay Nam Nữ Kẻ Sọc Nhẹ, Designed By Nice Clothes",price:119000,description:"Thể thao, Cơ bản, Hàn Quốc, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwqh4o6s2w2h1d.webp",link:"https://s.shopee.vn/9pUEGapIJl",rating:4.6,reviews:1325,sold:24902},
+        {name:"[TOSUN] Áo Polo Dài Tay TOSUN Chất Liệu Nỉ 2 Da Form Rộng Hàn Quốc S40",price:200000,description:"Hàn Quốc, Retro, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mdbdwu92becc90.webp",link:"https://s.shopee.vn/5fegYpCdxF",rating:4.5,reviews:4049,sold:15754}],
         
 
         
         
       "Thời Trang Nữ":[
-        {name:"[TOSUN] Áo Polo Dài Tay TOSUN Chất Liệu Nỉ 2 Da Form Rộng Hàn Quốc S40",price:200000,description:"Hàn Quốc, Retro, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mdbdwu92becc90.webp",link:"https://s.shopee.vn/5fegYpCdxF"},
-        {name:"Áo len cộc tay cổ tròn thêu nơ, áo len mongtoghi hoạ tiết xoắn thừng Renee Store - AL2180",price:132500,description:"Phong cách Hàn Quốc",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lytio69c8vgt57@resize_w900_nl.webp",link:"https://s.shopee.vn/4fm9Mcz93i"},
-        {name:"Áo Len Mongtoghi Kẻ Nhỏ Nền Trắng Kẻ Đỏ.",price:118000,description:"Co giãn tốt, phom xịn",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcl9ial7e4rg1f.webp",link:"https://s.shopee.vn/70A49mhZzg"},
-        {name:"Đầm Bí Tay Phồng Phối Ren Cổ TABISHOP",price:200000,description:"Váy Xịn Chơi Hè",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m99j0vxrqnusbf.webp",link:"https://s.shopee.vn/6pqdy4KC3x"},
-        {name:"Áo Kiểu ORANA Babydoll Hoạ Tiết In Hoa",price:152000,description:"Sơ mi tối giản",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-maw5bwqjq8rbbc.webp",link:"https://s.shopee.vn/5fegaBnFEu"},
-        {name:"Áo Thun ZHELIHANGFEI Tay Ngắn Phồng Dáng Rộng Họa Tiết Kẻ Sọc",price:107000,description:"Trung Quốc,ZHELIHANGFEI",image:"https://down-vn.img.susercontent.com/file/cn-11134207-7r98o-lqem8a03hjqt69.webp",link:"https://s.shopee.vn/5VLGOVXiG8"},
-        {name:"Áo Thun ZHELIHANGFEI Tay Ngắn Phồng Dáng Rộng Họa Tiết Kẻ Sọc",price:107000,description:"Trung Quốc,ZHELIHANGFEI",image:"https://down-vn.img.susercontent.com/file/cn-11134207-7r98o-lqem8a03hjqt69.webp",link:"https://s.shopee.vn/5VLGOVXiG8"}],
+        {name:"[TOSUN] Áo Polo Dài Tay TOSUN Chất Liệu Nỉ 2 Da Form Rộng Hàn Quốc S40",price:200000,description:"Hàn Quốc, Retro, Đường phố",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mdbdwu92becc90.webp",link:"https://s.shopee.vn/5fegYpCdxF",rating:4.4,reviews:1714,sold:41266},
+        {name:"Áo len cộc tay cổ tròn thêu nơ, áo len mongtoghi hoạ tiết xoắn thừng Renee Store - AL2180",price:132500,description:"Phong cách Hàn Quốc",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lytio69c8vgt57@resize_w900_nl.webp",link:"https://s.shopee.vn/4fm9Mcz93i",rating:4.6,reviews:3086,sold:22708},
+        {name:"Áo Len Mongtoghi Kẻ Nhỏ Nền Trắng Kẻ Đỏ.",price:118000,description:"Co giãn tốt, phom xịn",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcl9ial7e4rg1f.webp",link:"https://s.shopee.vn/70A49mhZzg",rating:4.3,reviews:3523,sold:10772},
+        {name:"Đầm Bí Tay Phồng Phối Ren Cổ TABISHOP",price:200000,description:"Váy Xịn Chơi Hè",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ra0g-m99j0vxrqnusbf.webp",link:"https://s.shopee.vn/6pqdy4KC3x",rating:4.8,reviews:751,sold:12709},
+        {name:"Áo Kiểu ORANA Babydoll Hoạ Tiết In Hoa",price:152000,description:"Sơ mi tối giản",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-maw5bwqjq8rbbc.webp",link:"https://s.shopee.vn/5fegaBnFEu",rating:4.6,reviews:4443,sold:31204},
+        {name:"Áo Thun ZHELIHANGFEI Tay Ngắn Phồng Dáng Rộng Họa Tiết Kẻ Sọc",price:107000,description:"Trung Quốc,ZHELIHANGFEI",image:"https://down-vn.img.susercontent.com/file/cn-11134207-7r98o-lqem8a03hjqt69.webp",link:"https://s.shopee.vn/5VLGOVXiG8",rating:4.5,reviews:1056,sold:30777},
+        {name:"Áo Thun ZHELIHANGFEI Tay Ngắn Phồng Dáng Rộng Họa Tiết Kẻ Sọc",price:107000,description:"Trung Quốc,ZHELIHANGFEI",image:"https://down-vn.img.susercontent.com/file/cn-11134207-7r98o-lqem8a03hjqt69.webp",link:"https://s.shopee.vn/5VLGOVXiG8",rating:4.9,reviews:4532,sold:25285}],
         "Thời Trang Trẻ Em":[
-        {name:"Váy 2/9 Cho Bé Gái, Bộ Đồ 2/9 Cho Bé, Váy Bé Gái 2/9 Dáng Bí Tặng Kèm Mũ, Túi Cavat 4ct Bé Đi Chơi Lễ",price:120000,description:"Đi Chơi 2-9",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcd5k7pjopxhec.webp",link:"https://s.shopee.vn/6KuNZ5iM5c"},
-        {name:"Set 2/9 Cho Bé, Váy Cờ Đỏ Sao Vàng Cho Bé Gái, Đồ Bộ Bé Gái Diện Chơi Lễ 2/9 Từ 10 - 30kg, Baby Girl",price:109000,description:"Hoa nhí, chơi 2-9",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcusutiskhp8c9.webp",link:"https://s.shopee.vn/10K29BIiO"},
-        {name:"Sơ Sinh Jumpsuit Bé Không Xương Áo Liền Quần Thu Đông Cotton Nguyên Chất Sơ Sinh Monk Quần Áo Liền Quần Velcro Quần Áo Cho Bé",price:120000,description:"Trẻ sơ sinh",image:"https://down-vn.img.susercontent.com/file/sg-11134201-7rdyl-mby9qw1qu7qf61.webp",link:"https://s.shopee.vn/4VSjOtdaCP"},
-        {name:"Áo OTT Nữ Từ 8-12 Tuổi",price:134000,description:"Nữ trẻ em xịn",image:"https://down-vn.img.susercontent.com/file/sg-11134201-7rd48-lvko07di9pnx80.webp",link:"https://s.shopee.vn/1qRyEyyQfA"},
-        {name:"Đồ Bộ Bé Gái NY Quần Ống Rộng Caro Cho Bé 2-16 Tuổi BXG144",price:123000,description:"Nữ trẻ em sang xịn ",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-liprh7n41hxo8a.webp",link:"https://s.shopee.vn/Vwaf76HqD"}],
+        {name:"Váy 2/9 Cho Bé Gái, Bộ Đồ 2/9 Cho Bé, Váy Bé Gái 2/9 Dáng Bí Tặng Kèm Mũ, Túi Cavat 4ct Bé Đi Chơi Lễ",price:120000,description:"Đi Chơi 2-9",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcd5k7pjopxhec.webp",link:"https://s.shopee.vn/6KuNZ5iM5c",rating:4.6,reviews:768,sold:30839},
+        {name:"Set 2/9 Cho Bé, Váy Cờ Đỏ Sao Vàng Cho Bé Gái, Đồ Bộ Bé Gái Diện Chơi Lễ 2/9 Từ 10 - 30kg, Baby Girl",price:109000,description:"Hoa nhí, chơi 2-9",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7ras8-mcusutiskhp8c9.webp",link:"https://s.shopee.vn/10K29BIiO",rating:4.8,reviews:4350,sold:1896},
+        {name:"Sơ Sinh Jumpsuit Bé Không Xương Áo Liền Quần Thu Đông Cotton Nguyên Chất Sơ Sinh Monk Quần Áo Liền Quần Velcro Quần Áo Cho Bé",price:120000,description:"Trẻ sơ sinh",image:"https://down-vn.img.susercontent.com/file/sg-11134201-7rdyl-mby9qw1qu7qf61.webp",link:"https://s.shopee.vn/4VSjOtdaCP",rating:4.4,reviews:1224,sold:38492},
+        {name:"Áo OTT Nữ Từ 8-12 Tuổi",price:134000,description:"Nữ trẻ em xịn",image:"https://down-vn.img.susercontent.com/file/sg-11134201-7rd48-lvko07di9pnx80.webp",link:"https://s.shopee.vn/1qRyEyyQfA",rating:4.8,reviews:2890,sold:27020},
+        {name:"Đồ Bộ Bé Gái NY Quần Ống Rộng Caro Cho Bé 2-16 Tuổi BXG144",price:123000,description:"Nữ trẻ em sang xịn ",image:"https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-liprh7n41hxo8a.webp",link:"https://s.shopee.vn/Vwaf76HqD",rating:4.5,reviews:1990,sold:26825}],
      
      
      
      
        "Phụ Kiện Thời Trang":[
-        {name:"Scrunchies 4 Lớp Và 2 Lớp Cột Tóc Cỡ Nhỏ Và To Xoè Bồng Bềnh Màu Trắng Dây Buộc Tóc Tiểu Thư Vải Thêu Hoa Y325",price:40000,description:"4 Lớp 2 Tầng",image:"https://down-vn.img.susercontent.com/file/sg-11134201-7rfg1-m9ijt57ogo8703.webp",link:"https://s.shopee.vn/40WSpwwCUi"},
-        {name:"Mũ Lưỡi Trai",price:99000,description:"Dễ phối",image:img("baseball cap",2),link:"https://shopee.vn/mu-luoi-trai"},
-        {name:"Kính Mát UV400",price:149000,description:"Nhẹ, chống UV",image:img("sunglasses",3),link:"https://shopee.vn/kinh-mat"}],
+        {name:"Scrunchies 4 Lớp Và 2 Lớp Cột Tóc Cỡ Nhỏ Và To Xoè Bồng Bềnh Màu Trắng Dây Buộc Tóc Tiểu Thư Vải Thêu Hoa Y325",price:40000,description:"4 Lớp 2 Tầng",image:"https://down-vn.img.susercontent.com/file/sg-11134201-7rfg1-m9ijt57ogo8703.webp",link:"https://s.shopee.vn/40WSpwwCUi",rating:4.7,reviews:3088,sold:34608},
+        {name:"[TẶNG KÈM CHARM] Túi Nữ Dáng Mềm MATE MADE Cloudy Lọ Lem - Nhẹ Nhàng, Tinh Tế, Hợp Đi Làm Đi Chơi",price:300000,description:"Dễ phối",image:img("baseball cap",2),link:"https://shopee.vn/mu-luoi-trai",rating:4.8,reviews:1316,sold:4338},
+        {name:"Kính Mát UV400",price:149000,description:"Nhẹ, chống UV",image:img("sunglasses",3),link:"https://shopee.vn/kinh-mat",rating:4.9,reviews:2155,sold:2743}],
       
       
       
       
        "Trang Điểm":[
-        {name:"Son Lì",price:169000,description:"Lên màu chuẩn",image:img("lipstick makeup",1),link:"https://shopee.vn/son-moi"},
-        {name:"Phấn Mắt 9 Ô",price:219000,description:"Tone dễ dùng",image:img("eyeshadow palette",2),link:"https://shopee.vn/phan-mat"},
-        {name:"Kem Nền",price:239000,description:"Che phủ tự nhiên",image:img("foundation makeup",3),link:"https://shopee.vn/kem-nen"}],
+        {name:"Son Lì",price:169000,description:"Lên màu chuẩn",image:img("lipstick makeup",1),link:"https://shopee.vn/son-moi",rating:4.5,reviews:4629,sold:44821},
+        {name:"Phấn Mắt 9 Ô",price:219000,description:"Tone dễ dùng",image:img("eyeshadow palette",2),link:"https://shopee.vn/phan-mat",rating:4.3,reviews:4229,sold:13057},
+        {name:"Kem Nền",price:239000,description:"Che phủ tự nhiên",image:img("foundation makeup",3),link:"https://shopee.vn/kem-nen",rating:4.5,reviews:4656,sold:44516}],
      
      
      
         "Chăm Sóc Cá Nhân":[
-        {name:"Serum Vitamin C",price:259000,description:"Sáng da",image:img("vitamin c serum",1),link:"https://shopee.vn/serum"},
-        {name:"Kem Dưỡng Ẩm",price:199000,description:"Giữ ẩm 24h",image:img("moisturizer skincare",2),link:"https://shopee.vn/kem-duong-am"},
-        {name:"Mặt Nạ Giấy",price:59000,description:"Cấp nước",image:img("sheet mask",3),link:"https://shopee.vn/mat-na"}],
+        {name:"Serum Vitamin C",price:259000,description:"Sáng da",image:img("vitamin c serum",1),link:"https://shopee.vn/serum",rating:4.6,reviews:2293,sold:49733},
+        {name:"Kem Dưỡng Ẩm",price:199000,description:"Giữ ẩm 24h",image:img("moisturizer skincare",2),link:"https://shopee.vn/kem-duong-am",rating:4.8,reviews:999,sold:43178},
+        {name:"Mặt Nạ Giấy",price:59000,description:"Cấp nước",image:img("sheet mask",3),link:"https://shopee.vn/mat-na",rating:4.7,reviews:2179,sold:11282}],
      
      
      
         "Trang Sức Cá Nhân":[
-        {name:"Nhẫn Vàng 18K",price:1599000,description:"Tinh xảo",image:img("gold ring jewelry",1),link:"https://shopee.vn/nhan-vang"},
-        {name:"Dây Chuyền Mặt Đá",price:499000,description:"Thanh lịch",image:img("necklace gemstone",2),link:"https://shopee.vn/day-chuyen"},
-        {name:"Vòng Tay Tối Giản",price:279000,description:"Trang nhã",image:img("bracelet minimal",3),link:"https://shopee.vn/vong-tay"}],
+        {name:"Nhẫn Vàng 18K",price:1599000,description:"Tinh xảo",image:img("gold ring jewelry",1),link:"https://shopee.vn/nhan-vang",rating:4.5,reviews:1735,sold:16369},
+        {name:"Dây Chuyền Mặt Đá",price:499000,description:"Thanh lịch",image:img("necklace gemstone",2),link:"https://shopee.vn/day-chuyen",rating:4.5,reviews:781,sold:5500},
+        {name:"Vòng Tay Tối Giản",price:279000,description:"Trang nhã",image:img("bracelet minimal",3),link:"https://shopee.vn/vong-tay",rating:4.9,reviews:1684,sold:40105}],
      
      
      
      
         "Trang Sức Thời Trang":[
-        {name:"Bông Tai Bạc",price:159000,description:"Chống xỉn",image:img("silver earrings",1),link:"https://shopee.vn/bong-tai"},
-        {name:"Nhẫn Titan",price:129000,description:"Bền, cá tính",image:img("titanium ring",2),link:"https://shopee.vn/nhan-titan"},
-        {name:"Set Dây Layer",price:189000,description:"Mix & match",image:img("layered necklace",3),link:"https://shopee.vn/set-day-chuyen"}],
+        {name:"Bông Tai Bạc",price:159000,description:"Chống xỉn",image:img("silver earrings",1),link:"https://shopee.vn/bong-tai",rating:4.7,reviews:2099,sold:37169},
+        {name:"Nhẫn Titan",price:129000,description:"Bền, cá tính",image:img("titanium ring",2),link:"https://shopee.vn/nhan-titan",rating:4.8,reviews:2465,sold:34828},
+        {name:"Set Dây Layer",price:189000,description:"Mix & match",image:img("layered necklace",3),link:"https://shopee.vn/set-day-chuyen",rating:4.3,reviews:4884,sold:34026}],
     
     
     
         "Khoa học & Giáo dục":[
-        {name:"Vũ Trụ & Hành Tinh",price:129000,description:"Khám phá không gian",image:img("space science book",1),link:"https://shopee.vn/sach-khoa-hoc"},
-        {name:"Sinh Học Vui",price:99000,description:"Dễ hiểu",image:img("biology book",2),link:"https://shopee.vn/sinh-hoc"},
-        {name:"Giáo Dục Sớm",price:89000,description:"Phát triển tư duy",image:img("education book",3),link:"https://shopee.vn/giao-duc"}],
+        {name:"Vũ Trụ & Hành Tinh",price:129000,description:"Khám phá không gian",image:img("space science book",1),link:"https://shopee.vn/sach-khoa-hoc",rating:4.6,reviews:3460,sold:35506},
+        {name:"Sinh Học Vui",price:99000,description:"Dễ hiểu",image:img("biology book",2),link:"https://shopee.vn/sinh-hoc",rating:4.3,reviews:3510,sold:34513},
+        {name:"Giáo Dục Sớm",price:89000,description:"Phát triển tư duy",image:img("education book",3),link:"https://shopee.vn/giao-duc",rating:4.8,reviews:3595,sold:3597}],
       
       
       
         "Văn học & Tiểu thuyết":[
-        {name:"Tiểu Thuyết Lãng Mạn",price:109000,description:"Câu chuyện ấm áp",image:img("romance novel book",1),link:"https://shopee.vn/tieu-thuyet"},
-        {name:"Truyện Ngắn",price:89000,description:"Sâu sắc",image:img("short stories book",2),link:"https://shopee.vn/truyen-ngan"},
-        {name:"Văn Học Kinh Điển",price:119000,description:"Bất hủ",image:img("classic literature book",3),link:"https://shopee.vn/van-hoc"}],
+        {name:"Tiểu Thuyết Lãng Mạn",price:109000,description:"Câu chuyện ấm áp",image:img("romance novel book",1),link:"https://shopee.vn/tieu-thuyet",rating:4.5,reviews:3872,sold:48311},
+        {name:"Truyện Ngắn",price:89000,description:"Sâu sắc",image:img("short stories book",2),link:"https://shopee.vn/truyen-ngan",rating:4.8,reviews:3123,sold:15091},
+        {name:"Văn Học Kinh Điển",price:119000,description:"Bất hủ",image:img("classic literature book",3),link:"https://shopee.vn/van-hoc",rating:4.5,reviews:1131,sold:14721}],
       
       
       
         "Kinh tế & Phát triển bản thân":[
-        {name:"Sách Kinh Doanh",price:139000,description:"Chiến lược",image:img("business book",1),link:"https://shopee.vn/kinh-doanh"},
-        {name:"Tài Chính Cá Nhân",price:129000,description:"Quản lý tiền",image:img("finance book",2),link:"https://shopee.vn/tai-chinh"},
-        {name:"Self-help",price:99000,description:"Thói quen tốt",image:img("self help book",3),link:"https://shopee.vn/self-help"}],
+        {name:"Sách Kinh Doanh",price:139000,description:"Chiến lược",image:img("business book",1),link:"https://shopee.vn/kinh-doanh",rating:4.8,reviews:3717,sold:24871},
+        {name:"Tài Chính Cá Nhân",price:129000,description:"Quản lý tiền",image:img("finance book",2),link:"https://shopee.vn/tai-chinh",rating:4.5,reviews:1593,sold:2741},
+        {name:"Self-help",price:99000,description:"Thói quen tốt",image:img("self help book",3),link:"https://shopee.vn/self-help",rating:4.3,reviews:1967,sold:11311}],
       
       
       
         "Đời sống & Nghệ thuật":[
-        {name:"Sách Ẩm Thực",price:99000,description:"Công thức ngon",image:img("cookbook",1),link:"https://shopee.vn/am-thuc"},
-        {name:"Du Lịch",price:109000,description:"Khám phá",image:img("travel book",2),link:"https://shopee.vn/du-lich"},
-        {name:"Nghệ Thuật",price:119000,description:"Hội họa/nhiếp ảnh",image:img("art book",3),link:"https://shopee.vn/nghe-thuat"}],
+        {name:"Sách Ẩm Thực",price:99000,description:"Công thức ngon",image:img("cookbook",1),link:"https://shopee.vn/am-thuc",rating:4.7,reviews:3123,sold:28988},
+        {name:"Du Lịch",price:109000,description:"Khám phá",image:img("travel book",2),link:"https://shopee.vn/du-lich",rating:4.8,reviews:978,sold:41416},
+        {name:"Nghệ Thuật",price:119000,description:"Hội họa/nhiếp ảnh",image:img("art book",3),link:"https://shopee.vn/nghe-thuat",rating:4.7,reviews:3570,sold:38983}],
       
       
       
         "Phòng Bếp":[
-        {name:"Nồi Inox",price:259000,description:"Bền, truyền nhiệt tốt",image:img("stainless pot kitchen",1),link:"https://shopee.vn/noi-inox"},
-        {name:"Chảo Chống Dính",price:219000,description:"Dễ chiên xào",image:img("nonstick pan",2),link:"https://shopee.vn/chao-chong-dinh"},
-        {name:"Máy Xay Sinh Tố",price:569000,description:"Cối thủy tinh",image:img("blender",3),link:"https://shopee.vn/may-xay"}],
+        {name:"Nồi Inox",price:259000,description:"Bền, truyền nhiệt tốt",image:img("stainless pot kitchen",1),link:"https://shopee.vn/noi-inox",rating:4.4,reviews:3859,sold:3618},
+        {name:"Chảo Chống Dính",price:219000,description:"Dễ chiên xào",image:img("nonstick pan",2),link:"https://shopee.vn/chao-chong-dinh",rating:4.3,reviews:4358,sold:9293},
+        {name:"Máy Xay Sinh Tố",price:569000,description:"Cối thủy tinh",image:img("blender",3),link:"https://shopee.vn/may-xay",rating:4.9,reviews:1302,sold:9347}],
       "Phòng Ngủ":[
-        {name:"Đèn Ngủ",price:159000,description:"Ánh sáng dịu",image:img("bedroom lamp",1),link:"https://shopee.vn/den-ngu"},
-        {name:"Ga Gối",price:199000,description:"Cotton mềm",image:img("bedding",2),link:"https://shopee.vn/ga-goi"},
-        {name:"Máy Lọc Không Khí",price:1699000,description:"Lọc bụi mịn",image:img("air purifier",3),link:"https://shopee.vn/may-loc-khong-khi"}],
+        {name:"Đèn Ngủ",price:159000,description:"Ánh sáng dịu",image:img("bedroom lamp",1),link:"https://shopee.vn/den-ngu",rating:4.8,reviews:3208,sold:7743},
+        {name:"Ga Gối",price:199000,description:"Cotton mềm",image:img("bedding",2),link:"https://shopee.vn/ga-goi",rating:4.6,reviews:2830,sold:44809},
+        {name:"Máy Lọc Không Khí",price:1699000,description:"Lọc bụi mịn",image:img("air purifier",3),link:"https://shopee.vn/may-loc-khong-khi",rating:4.4,reviews:4154,sold:46136}],
       "Phòng Khách":[
-        {name:"Sofa Vải",price:3599000,description:"Êm & thoáng",image:img("sofa living room",1),link:"https://shopee.vn/sofa"},
-        {name:"Bàn Trà",price:699000,description:"Gỗ tự nhiên",image:img("coffee table",2),link:"https://shopee.vn/ban-tra"},
-        {name:"Kệ Tivi",price:899000,description:"Tối giản",image:img("tv stand",3),link:"https://shopee.vn/ke-tivi"}],
+        {name:"Sofa Vải",price:3599000,description:"Êm & thoáng",image:img("sofa living room",1),link:"https://shopee.vn/sofa",rating:4.8,reviews:1842,sold:16395},
+        {name:"Bàn Trà",price:699000,description:"Gỗ tự nhiên",image:img("coffee table",2),link:"https://shopee.vn/ban-tra",rating:4.8,reviews:2764,sold:43741},
+        {name:"Kệ Tivi",price:899000,description:"Tối giản",image:img("tv stand",3),link:"https://shopee.vn/ke-tivi",rating:4.6,reviews:1781,sold:8826}],
       "Phòng Tắm":[
-        {name:"Vòi Sen",price:279000,description:"Áp lực mạnh",image:img("shower head",1),link:"https://shopee.vn/voi-sen"},
-        {name:"Tủ Gương",price:649000,description:"Chống ẩm",image:img("bathroom mirror cabinet",2),link:"https://shopee.vn/tu-guong"},
-        {name:"Máy Nước Nóng",price:1899000,description:"Tiết kiệm điện",image:img("water heater",3),link:"https://shopee.vn/may-nuoc-nong"}],
+        {name:"Vòi Sen",price:279000,description:"Áp lực mạnh",image:img("shower head",1),link:"https://shopee.vn/voi-sen",rating:4.4,reviews:4599,sold:17232},
+        {name:"Tủ Gương",price:649000,description:"Chống ẩm",image:img("bathroom mirror cabinet",2),link:"https://shopee.vn/tu-guong",rating:4.5,reviews:2271,sold:41912},
+        {name:"Máy Nước Nóng",price:1899000,description:"Tiết kiệm điện",image:img("water heater",3),link:"https://shopee.vn/may-nuoc-nong",rating:4.5,reviews:3604,sold:15426}],
       "Vườn & Ban Công":[
-        {name:"Chậu Cây",price:89000,description:"Nhựa/xi măng",image:img("plant pot",1),link:"https://shopee.vn/chau-cay"},
-        {name:"Bộ Dụng Cụ Vườn",price:129000,description:"Xẻng, cào",image:img("garden tools",2),link:"https://shopee.vn/dung-cu-lam-vuon"},
-        {name:"Đèn NLMT",price:159000,description:"Trang trí ngoài trời",image:img("solar garden lights",3),link:"https://shopee.vn/den-nlmt"}],
+        {name:"Chậu Cây",price:89000,description:"Nhựa/xi măng",image:img("plant pot",1),link:"https://shopee.vn/chau-cay",rating:4.7,reviews:4101,sold:7329},
+        {name:"Bộ Dụng Cụ Vườn",price:129000,description:"Xẻng, cào",image:img("garden tools",2),link:"https://shopee.vn/dung-cu-lam-vuon",rating:4.7,reviews:1113,sold:3447},
+        {name:"Đèn NLMT",price:159000,description:"Trang trí ngoài trời",image:img("solar garden lights",3),link:"https://shopee.vn/den-nlmt",rating:4.6,reviews:4682,sold:45545}],
       "An Toàn & Tiện Ích":[
-        {name:"Khóa Cửa Thông Minh",price:1999000,description:"Vân tay/Thẻ",image:img("smart door lock",1),link:"https://shopee.vn/khoa-thong-minh"},
-        {name:"Bình Chữa Cháy",price:219000,description:"An tâm",image:img("fire extinguisher",2),link:"https://shopee.vn/binh-chua-chay"},
-        {name:"Ổ Cắm Thông Minh",price:229000,description:"Hẹn giờ/app",image:img("smart plug",3),link:"https://shopee.vn/o-cam-thong-minh"}],
+        {name:"Khóa Cửa Thông Minh",price:1999000,description:"Vân tay/Thẻ",image:img("smart door lock",1),link:"https://shopee.vn/khoa-thong-minh",rating:4.7,reviews:4512,sold:40076},
+        {name:"Bình Chữa Cháy",price:219000,description:"An tâm",image:img("fire extinguisher",2),link:"https://shopee.vn/binh-chua-chay",rating:4.4,reviews:3061,sold:21959},
+        {name:"Ổ Cắm Thông Minh",price:229000,description:"Hẹn giờ/app",image:img("smart plug",3),link:"https://shopee.vn/o-cam-thong-minh",rating:4.5,reviews:2932,sold:30270}],
       "Giải Trí Thực Tế":[
-        {name:"Boardgame Chiến Thuật",price:349000,description:"Vui cả nhóm",image:img("boardgame",1),link:"https://shopee.vn/boardgame"},
-        {name:"Mô Hình Figure",price:299000,description:"Sưu tầm",image:img("anime figure",2),link:"https://shopee.vn/figure"},
-        {name:"Xếp Hình Puzzle",price:159000,description:"Rèn trí",image:img("puzzle",3),link:"https://shopee.vn/puzzle"}],
+        {name:"Boardgame Chiến Thuật",price:349000,description:"Vui cả nhóm",image:img("boardgame",1),link:"https://shopee.vn/boardgame",rating:4.7,reviews:3073,sold:40759},
+        {name:"Mô Hình Figure",price:299000,description:"Sưu tầm",image:img("anime figure",2),link:"https://shopee.vn/figure",rating:4.8,reviews:4321,sold:34103},
+        {name:"Xếp Hình Puzzle",price:159000,description:"Rèn trí",image:img("puzzle",3),link:"https://shopee.vn/puzzle",rating:4.3,reviews:4166,sold:45081}],
       "Giải Trí Ảo":[
-        {name:"Kính VR",price:2499000,description:"Đắm chìm",image:img("vr headset",1),link:"https://shopee.vn/kinh-vr"},
-        {name:"Tay Cầm Game",price:459000,description:"Độ trễ thấp",image:img("game controller",2),link:"https://shopee.vn/tay-cam-game"},
-        {name:"Tai Nghe Gaming",price:579000,description:"Âm vòm",image:img("gaming headset",3),link:"https://shopee.vn/tai-nghe-gaming"}],
+        {name:"Kính VR",price:2499000,description:"Đắm chìm",image:img("vr headset",1),link:"https://shopee.vn/kinh-vr",rating:4.8,reviews:3424,sold:40119},
+        {name:"Tay Cầm Game",price:459000,description:"Độ trễ thấp",image:img("game controller",2),link:"https://shopee.vn/tay-cam-game",rating:4.5,reviews:1181,sold:30542},
+        {name:"Tai Nghe Gaming",price:579000,description:"Âm vòm",image:img("gaming headset",3),link:"https://shopee.vn/tai-nghe-gaming",rating:4.6,reviews:1358,sold:45769}],
       "Công Nghệ Cá Nhân":[
-        {name:"Điện Thoại",price:4999000,description:"Màn đẹp, pin trâu",image:img("smartphone",1),link:"https://shopee.vn/dien-thoai"},
-        {name:"Laptop",price:12999000,description:"Mỏng nhẹ",image:img("laptop",2),link:"https://shopee.vn/laptop"},
-        {name:"Tablet",price:5999000,description:"Giải trí học tập",image:img("tablet",3),link:"https://shopee.vn/tablet"}],
+        {name:"Điện Thoại",price:4999000,description:"Màn đẹp, pin trâu",image:img("smartphone",1),link:"https://shopee.vn/dien-thoai",rating:4.3,reviews:144,sold:24794},
+        {name:"Laptop",price:12999000,description:"Mỏng nhẹ",image:img("laptop",2),link:"https://shopee.vn/laptop",rating:4.6,reviews:1355,sold:5508},
+        {name:"Tablet",price:5999000,description:"Giải trí học tập",image:img("tablet",3),link:"https://shopee.vn/tablet",rating:4.6,reviews:2521,sold:38705}],
       "Công Nghệ Gia Dụng":[
-        {name:"TV 4K",price:6999000,description:"Sống động",image:img("4k tv",1),link:"https://shopee.vn/tv"},
-        {name:"Loa Bluetooth",price:699000,description:"Trầm mạnh",image:img("bluetooth speaker",2),link:"https://shopee.vn/loa"},
-        {name:"Máy Hút Bụi",price:2399000,description:"Công suất lớn",image:img("vacuum cleaner",3),link:"https://shopee.vn/may-hut-bui"}],
+        {name:"TV 4K",price:6999000,description:"Sống động",image:img("4k tv",1),link:"https://shopee.vn/tv",rating:4.3,reviews:4994,sold:34610},
+        {name:"Loa Bluetooth",price:699000,description:"Trầm mạnh",image:img("bluetooth speaker",2),link:"https://shopee.vn/loa",rating:4.3,reviews:389,sold:45701},
+        {name:"Máy Hút Bụi",price:2399000,description:"Công suất lớn",image:img("vacuum cleaner",3),link:"https://shopee.vn/may-hut-bui",rating:4.3,reviews:322,sold:16670}],
       "Đồ Ăn Vặt":[
-        {name:"Snack Khoai Tây",price:29000,description:"Giòn rụm",image:img("chips snack",1),link:"https://shopee.vn/snack"},
-        {name:"Bánh Quy Bơ",price:39000,description:"Thơm béo",image:img("cookies",2),link:"https://shopee.vn/banh-quy"},
-        {name:"Trà Sữa Chai",price:35000,description:"Ngon tiện",image:img("bottled milk tea",3),link:"https://shopee.vn/tra-sua-chai"}],
+        {name:"Snack Khoai Tây",price:29000,description:"Giòn rụm",image:img("chips snack",1),link:"https://shopee.vn/snack",rating:4.7,reviews:3904,sold:11654},
+        {name:"Bánh Quy Bơ",price:39000,description:"Thơm béo",image:img("cookies",2),link:"https://shopee.vn/banh-quy",rating:4.8,reviews:3020,sold:17457},
+        {name:"Trà Sữa Chai",price:35000,description:"Ngon tiện",image:img("bottled milk tea",3),link:"https://shopee.vn/tra-sua-chai",rating:4.7,reviews:2011,sold:23424}],
       "Đồ Ăn Healthy":[
-        {name:"Granola",price:79000,description:"Ngũ cốc dinh dưỡng",image:img("granola bowl",1),link:"https://shopee.vn/granola"},
-        {name:"Hạt Hạnh Nhân",price:99000,description:"Giàu protein",image:img("almonds",2),link:"https://shopee.vn/hanh-nhan"},
-        {name:"Salad Trộn",price:59000,description:"Tươi ngon",image:img("salad",3),link:"https://shopee.vn/salad"}]
+        {name:"Granola",price:79000,description:"Ngũ cốc dinh dưỡng",image:img("granola bowl",1),link:"https://shopee.vn/granola",rating:4.4,reviews:2080,sold:34714},
+        {name:"Hạt Hạnh Nhân",price:99000,description:"Giàu protein",image:img("almonds",2),link:"https://shopee.vn/hanh-nhan",rating:4.8,reviews:4504,sold:39534},
+        {name:"Salad Trộn",price:59000,description:"Tươi ngon",image:img("salad",3),link:"https://shopee.vn/salad",rating:4.7,reviews:716,sold:37456}]
     };
 
     /* ===== State + Browser History ===== */
@@ -371,6 +450,16 @@ body {
       state = newState;
       history.pushState(state, "", "");      // đưa state vào history của trình duyệt
       render();
+
+    // Override checkout button to open all product links
+   qs('#checkout').onclick=(e)=>{
+  e.preventDefault();
+  if(cart.length===0){ showToast("Giỏ hàng trống"); return; }
+  if(confirm("Bạn sắp mở " + cart.length + " sản phẩm trong tab mới. Tiếp tục?")){
+    cart.forEach(p=> window.open(p.link, '_blank'));
+  }
+};
+
     }
 
     // Khi user bấm nút Back/Forward của trình duyệt
@@ -378,6 +467,14 @@ body {
       if(e.state){ state = e.state; }
       else{ state = { level:1, categoryId:null, subCategoryName:null }; }
       render();
+
+    // Override checkout button to open all product links
+    qs('#checkout').onclick=(e)=>{
+      e.preventDefault();
+      if(cart.length===0){ showToast("Giỏ hàng trống"); return; }
+      cart.forEach(p=> window.open(p.link, '_blank'));
+    };
+
     });
 
     /* ===== Render ===== */
@@ -412,7 +509,7 @@ body {
       (subCategories[state.categoryId]||[]).forEach(sc=>{
         const el=document.createElement('div'); el.className="card overflow-hidden flex flex-col";
         el.innerHTML=`
-          <div class="h-40 w-full overflow-hidden"><img src="${sc.image}" alt="${sc.name}" class="w-full h-full object-cover"></div>
+          <div class="h-40 w-full media-wrap"><img src="${sc.image}" alt="${sc.name}" class="w-full h-full object-cover"></div>
           <div class="p-4 flex-1 flex flex-col">
             <div class="font-semibold">${sc.name}</div>
             <div class="text-sm text-gray-600 truncate-2 mt-1">${sc.description||""}</div>
@@ -433,6 +530,9 @@ body {
           <div class="p-4 flex-1 flex flex-col">
             <div class="font-semibold">${p.name}</div>
             <div class="text-red-600 font-extrabold mt-1">${fmtVND(p.price)}</div>
+            <div class="flex items-center text-sm text-gray-600 mt-1">
+              ⭐ ${p.rating} (${p.reviews.toLocaleString()}) · ${p.sold.toLocaleString()} đã bán
+            </div>
             <div class="text-sm text-gray-600 mt-1 flex-1 truncate-2">${p.description||""}</div>
             <div class="mt-4 grid grid-cols-2 gap-2">
               <a href="${p.link}" target="_blank" class="btn bg-red-500 hover:bg-red-600 text-white px-3 py-2 text-center">⚡ Mua ngay</a>
@@ -451,6 +551,17 @@ body {
     }
 
     /* ===== Cart ===== */
+    function showToast(msg){
+      const area = qs('#toast-area');
+      if(!area) return;
+      const el = document.createElement('div');
+      el.className = 'toast';
+      el.textContent = msg;
+      area.appendChild(el);
+      setTimeout(()=>{ el.style.opacity="0"; el.style.transform="translateY(8px)"; }, 2200);
+      setTimeout(()=>{ el.remove(); }, 2600);
+    }
+
     function flyToCart(imgEl){
       const cartBtn=qs('#open-cart'), rImg=imgEl.getBoundingClientRect(), rCart=cartBtn.getBoundingClientRect();
       const clone=imgEl.cloneNode(true); clone.className="fly-img";
@@ -505,6 +616,14 @@ body {
     // Lần đầu load: nếu không có state trong history (user F5) thì push state hiện tại
     if(!history.state){ history.replaceState(state,"",""); }
     render();
+
+    // Override checkout button to open all product links
+    qs('#checkout').onclick=(e)=>{
+      e.preventDefault();
+      if(cart.length===0){ showToast("Giỏ hàng trống"); return; }
+      cart.forEach(p=> window.open(p.link, '_blank'));
+    };
+
   </script>
 <!-- Footer -->
 <footer class="footer">
@@ -513,7 +632,7 @@ body {
     <!-- Logo + Giới thiệu -->
     <div>
       <div class="flex items-center mb-3">
-       <img src="logo.png" alt="Logo" class="w-12 h-12 rounded-full mr-2">
+       <img src="logo.ico" alt="Logo" class="w-12 h-12 rounded-full mr-2">
         <h2 class="text-xl font-bold text-white">HuyHoang Shop</h2>
       </div>
       <p class="text-sm text-gray-200">
@@ -568,7 +687,7 @@ body {
 
     /* ===== Footer ===== */
     .footer {
-      background: linear-gradient(90deg, #f048bb, #23c3eb);
+      background: linear-gradient(90deg, #1d4ed8, #38bdf8);
       color: white;
       padding: 40px 20px;
       margin-top: 50px;
@@ -661,6 +780,18 @@ body {
 }
 
     }
+  
+  /* Product media hover */
+  .media-wrap{position:relative; overflow:hidden}
+  .media-wrap img{transition: transform .35s ease}
+  .card:hover .media-wrap img{transform: scale(1.06)}
+  /* Small badges */
+  .badge-blue{background:rgba(29,78,216,.1); color:#1d4ed8; padding:.15rem .5rem; border-radius:999px; font-size:.72rem; font-weight:700}
+  /* Toast */
+  #toast-area{position:fixed; right:16px; bottom:16px; z-index:99999; display:flex; flex-direction:column; gap:10px}
+  .toast{background:#0ea5e9; color:#fff; border-radius:12px; padding:10px 14px; box-shadow:0 10px 22px rgba(2,6,23,.2); animation:toastIn .25s ease}
+  @keyframes toastIn{from{transform:translateY(10px); opacity:0} to{transform:translateY(0); opacity:1}}
+
   </style> 
 </head>
 <!-- Floating Buttons -->
